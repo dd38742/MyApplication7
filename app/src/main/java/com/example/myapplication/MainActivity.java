@@ -24,7 +24,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        int h = getWindowManager().getDefaultDisplay().getHeight();
+        int w = getWindowManager().getDefaultDisplay().getWidth();
+        if(h > w){
+            setContentView(R.layout.activity_main);
+        }else{
+            setContentView(R.layout.heng);
+        }
+
 
     Button bt1 = findViewById(R.id.button);
     final TextView tx1 = findViewById(R.id.tx);
@@ -82,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         bt6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx1.append("%");
+                tx1.setText(String.valueOf(Double.valueOf(tx1.getText().toString())/100));
             }
         });
 
@@ -110,21 +117,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        /*Button bt10 = findViewById(R.id.button9);
+        Button bt10 = findViewById(R.id.button9);
         bt10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx1.setText("体积");
+                tx1.setText(String.valueOf(Double.valueOf(tx1.getText().toString())*1000));
             }
-        });*/
+        });
 
-        /*Button bt11 = findViewById(R.id.button10);
+        Button bt11 = findViewById(R.id.button10);
         bt11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx1.setText("长度");
+                tx1.setText(String.valueOf(Double.valueOf(tx1.getText().toString())*10));
             }
-        });*/
+        });
 
     Button bt12 = findViewById(R.id.button11);
         bt12.setOnClickListener(new View.OnClickListener() {
@@ -138,31 +145,32 @@ public class MainActivity extends AppCompatActivity {
         bt13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx1.append("sin");
+                tx1.setText(String.valueOf(Math.sin(Double.valueOf(tx1.getText().toString()))));
             }
         });
 
-    /*Button bt14 = findViewById(R.id.button13);
+    Button bt14 = findViewById(R.id.button13);
         bt14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx1.setText("cos");
+                tx1.setText(String.valueOf(Math.cos(Double.valueOf(tx1.getText().toString()))));
             }
-        });*/
-    /*Button bt15 = findViewById(R.id.button14);
+        });
+    Button bt15 = findViewById(R.id.button14);
         bt15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx1.setText("tan");
+                tx1.setText(String.valueOf(Math.tan(Double.valueOf(tx1.getText().toString()))));
             }
-        });*/
-    /*Button bt16 = findViewById(R.id.button15);
+        });
+    Button bt16 = findViewById(R.id.button15);
         bt16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx1.setText("平方");
+                int temp = Integer.valueOf(tx1.getText().toString(),2);
+                tx1.setText(String.valueOf(temp));
             }
-        });*/
+        });
 
     Button bt17 = findViewById(R.id.button16);
         bt17.setOnClickListener(new View.OnClickListener() {
@@ -250,7 +258,14 @@ public class MainActivity extends AppCompatActivity {
                 tx1.append(".");
             }
         });
-        //a
 
+        Button bt28 = findViewById(R.id.button27);
+        bt16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int temp = Integer.valueOf(tx1.getText().toString(),2);
+                tx1.setText(String.valueOf(temp));
+            }
+        });
     }
 }
