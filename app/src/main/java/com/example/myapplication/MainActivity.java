@@ -73,11 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
                 try{
                     String middle=tx1.getText().toString();
-                    char[] mid = middle.toCharArray();
-                    mid = Jin.cutString(mid);
-                    List list = Jin.transferToBehind(mid);
-                    BigDecimal comeOut = Jin.calculator(list);
-                    tx1.setText(comeOut.toString());
+                    cal s = new cal(middle);
+                    tx1.setText(s.getResult().toString());
                 } catch (Exception e) {
                     e.printStackTrace();
                     tx1.setText("ERROR");
@@ -260,10 +257,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button bt28 = findViewById(R.id.button27);
-        bt16.setOnClickListener(new View.OnClickListener() {
+        bt28.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int temp = Integer.valueOf(tx1.getText().toString(),2);
+                int temp = Integer.valueOf(tx1.getText().toString(),8);
                 tx1.setText(String.valueOf(temp));
             }
         });
