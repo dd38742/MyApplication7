@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity {
         bt28.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int temp = Integer.valueOf(tx1.getText().toString(),8);
+                int temp = Integer.valueOf(tx1.getText().toString(),16);
                 tx1.setText(String.valueOf(temp));
             }
         });
